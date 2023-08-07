@@ -1,0 +1,24 @@
+*{
+    font-family: 'Alegreya', 'Lato';
+    
+}
+
+.logo{
+    border-radius: 20%;
+    border: 3px solid #f24976;
+    padding: .3rem;
+    
+}
+.stilo-logo{
+    font-family: 'Alegreya';
+    font-weight: bolder;
+}
+ul li a{
+    font-family: 'Lato';
+}
+
+.lin-button{
+    background-color: #f24976;
+    color: white;
+    font-family: 'Lato';
+}

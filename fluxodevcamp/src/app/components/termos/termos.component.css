@@ -1,0 +1,23 @@
+*{
+    line-height: 2.3rem;
+    font-family: 'Lato';
+}
+p, li{
+    font-size: 1.2rem;
+}
+h2{
+    font-size: 2.4rem;
+    color: white;
+}
+
+.section{
+    background-color: #f24976;
+}
+h4{
+    font-family: 'Lato';
+    font-weight: bolder ;
+    font-size: x-large;
+}
+span{
+    font-weight: bolder;
+}
