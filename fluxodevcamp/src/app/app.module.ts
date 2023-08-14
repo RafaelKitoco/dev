@@ -7,6 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbartopComponent } from './components/navbartop/navbartop.component';
 import { FormComponent } from './components/form/form.component';
 import { TermosComponent } from './components/termos/termos.component';
+import { NavbarbottomComponent } from './components/navbarbottom/navbarbottom.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { TermosComponent } from './components/termos/termos.component';
     HomeComponent,
     NavbartopComponent,
     FormComponent,
-    TermosComponent
+    TermosComponent,
+    NavbarbottomComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

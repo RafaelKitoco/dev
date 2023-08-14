@@ -16,30 +16,68 @@
             <div class="container">
                 <h3 class="uk-text-center">Se inscreva</h3>
                 <p class="uk-text-center">Não perca a oportunidade de <br> aprender a desenvolver em angular</p>
-                <form action="" class="uk-grid-small" uk-grid>
+                <form [formGroup]="form" (submit)="Submeter" #ngForm="ngForm" class="uk-grid-small" uk-grid>
                 <div class="uk-width-1-1">
-                    <input type="text" class="uk-input " placeholder="nome completo">
+                    <input type="text" class="uk-input " formControlName="nome" placeholder="nome completo">
+                    <div *ngIf="nome.invalid && ngForm.submitted">
+                        <p *ngIf="nome.errors?.['required']">
+                            Este campo é obriatorio
+                        </p>
+                    </div>
                 </div>
                 <div class="uk-width-1-2">
-                    <input type="text" class="uk-input " placeholder="e-mail">
+                    <input type="text" class="uk-input " formControlName="email" placeholder="e-mail">
+                    <div *ngIf="email.invalid && ngForm.submitted">
+                        <p *ngIf="email.errors?.['required']">
+                            Este campo é obriatorio
+                        </p>
+                        <p *ngIf="email.errors?.['email']">
+                            Verifique o e-mail
+                        </p>
+                    </div>
                 </div>
                 <div class="uk-width-1-2">
-                    <input type="text" class="uk-input " placeholder="telefone">
+                    <input type="text" class="uk-input " formControlName="contacto" placeholder="telefone">
+                    <div *ngIf="contacto.invalid && ngForm.submitted">
+                        <p *ngIf="contacto.errors?.['required']">
+                            Este campo é obriatorio
+                        </p>
+                    </div>
                 </div>
                 <div class="uk-width-1-2">
-                    <input type="date" class="uk-input" name="" id="" placeholder="data de nascimento">
+                    <input type="date" class="uk-input" formControlName="data" id="" placeholder="data de nascimento">
+                    <div *ngIf="data.invalid && ngForm.submitted">
+                        <p *ngIf="data.errors?.['required']">
+                            Este campo é obriatorio
+                        </p>
+                    </div>
                 </div>
                 <div class="uk-width-1-2">
-                    <input type="text" class="uk-input" name="" id="" placeholder="morada">
+                    <input type="text" class="uk-input" formControlName="morada" placeholder="morada">
+                    <div *ngIf="morada.invalid && ngForm.submitted">
+                        <p *ngIf="morada.errors?.['required']">
+                            Este campo é obriatorio
+                        </p>
+                    </div>
                 </div>
                 <div class="uk-width-1-2">
-                    <textarea name="" class="uk-textarea" cols="30" rows="5" placeholder="fala sobre a sua experiêbcia em desenvolviimento"></textarea>
+                    <textarea name="" class="uk-textarea" cols="30" rows="5" placeholder="fala sobre a sua experiêbcia em desenvolviimento" formControlName="experiencia"></textarea>
+                    <div *ngIf="experiencia.invalid && ngForm.submitted">
+                        <p *ngIf="experiencia.errors?.['required']">
+                            Este campo é obriatorio
+                        </p>
+                    </div>
                 </div>
                 <div class="uk-width-1-2">
-                    <textarea name="" class="uk-textarea" cols="30" rows="5" placeholder="a exectativa sobre o curso de capacitação"></textarea>
+                    <textarea name="" class="uk-textarea" formControlName="expectativa" cols="30" rows="5" placeholder="a exectativa sobre o curso de capacitação"></textarea>
+                    <div *ngIf="expectativa.invalid && ngForm.submitted">
+                        <p *ngIf="expectativa.errors?.['required']">
+                            Este campo é obriatorio
+                        </p>
+                    </div>
                 </div>
                 <div class="uk-width-1-1">
-                    <input type="submit" class="uk-button uk-border-rounded uk-width-1-1" value="Submeter">
+                    <input type="submit" class="uk-button uk-border-rounded uk-width-1-1" value="Submeter" (click)="Submeter()">
                 </div>
                 </form>
             </div>
@@ -47,5 +85,3 @@
     </div>
     
 </div>
-
-<app-navbartop></app-navbartop>
